@@ -1,0 +1,29 @@
+<footer>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-12'>
+        <div class='footer-content'>
+          <div class='footer-copyright'>
+            <p>&copy; 2023 Friendly Fire. All Rights Reserved.</p>
+          </div>
+          <div class='footer-menu'>
+            <ul>
+               <li><button id="delete_button" class="btn btn-sm btn-danger" data-id="{{user_id}}">Disable Friendly Fire Profile</a></li>
+              {{#if logged_in}} 
+              <li><a href="/createprofile" data-id="{{user_id}}">Update Profile</a></li>
+              {{/if}}
+              <li><a href='/aboutus'>About Us</a></li>
+              <li><a href='/contact'>Contact</a></li>
+            </ul>
+          </div>
+          <!-- end of footer-social div -->
+        </div>
+        <!-- end of footer-content div -->
+      </div>
+      <!-- end of col div -->
+    </div>
+    <!-- end of row div -->
+  </div>
+  <!-- end of container div -->
+  <script src="/js/user.js"></script>
+</footer>

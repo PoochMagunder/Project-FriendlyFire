@@ -1,0 +1,32 @@
+<header class='display-flex justify-space-between align-left'>
+
+  <div class='header-logo'>
+    <a href='/'>
+      <img
+        src='{{sprayMap.8f67bf99-4572-de1e-a421-1d80e3713c36.fullTransparentIcon}}'
+        alt='{{sprayMap.8f67bf99-4572-de1e-a421-1d80e3713c36.displayName}}'
+      />
+    </a>
+  </div>
+  <nav>
+    <a href='/'>Home</a>
+
+    <a href='/agents'>Agents </a>
+    
+    <a href='/weapons'>Weapons </a>
+
+    <a href='/maps'>Maps </a>
+
+    {{#if logged_in}}
+      <a href='/myprofile'>My Profile</a>
+
+      <a href='' id='logout'>Logout</a>
+    {{else}}
+      <a href='/login'>Login</a>
+    {{/if}}
+
+    <h1 id='main-header' style='margin-left: auto;'>
+      Friendly Fire
+    </h1>
+  </nav>
+</header>

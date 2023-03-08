@@ -1,0 +1,759 @@
+/********* MAIN STUFF *********/
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'VALORANT', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li a img {
+  width: 50px;
+  height: 50px;
+  padding-right: 2px;
+}
+
+#word-cloud {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+/********* END OF MAIN STUFF *********/
+/********* HOMEPAGE STUFF *********/
+.valorant-card {
+  border: 2px solid #ccc;
+  background-color: #292929;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  overflow: hidden;
+}
+
+.valorant-card-body {
+  background-color: #3b3b3b;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.play-now-button,
+.home-button {
+  background-color: #f05454;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 1s ease-in-out;
+}
+
+.play-now-button:hover,
+.home-button:hover {
+  background-color: #d14c4c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border: 1px solid #fff;
+}
+
+.play-now-button:hover::after,
+.home-button:hover::after {
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+
+.home-button {
+  margin: 0 10px;
+}
+
+.play-now-button {
+  margin-top: 20px;
+}
+
+.valorant-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+.valorant-buttons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.home-button::before {
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: -1;
+}
+
+.home-button:hover::before {
+  opacity: 1;
+}
+
+/********* END OF HOMEPAGE STUFF *********/
+
+/********* HEADER STUFF *********/
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.header-logo {
+  padding-right: 25px;
+}
+
+.header-logo img {
+  height: 100px;
+  width: 100px;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+header nav a,
+footer .footer-menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+header nav a:hover,
+footer .footer-menu a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+/********* END OF HEADER STUFF *********/
+/********* FOOTER STUFF *********/
+footer {
+  position: fixed;
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.footer-menu li:last-child {
+  margin-right: 0;
+}
+
+.footer-menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/***** END OF FOOTER STUFF *****/
+/* CONTACT STUFF */
+
+.contact-social {
+  margin-right: 20px;
+  padding: 20px;
+  clear: both;
+  float: right;
+  width: 20%;
+  height: 130%;
+  margin-left: 30px;
+}
+.contact-links {
+  margin-top: 30px;
+}
+
+#email-link {
+  text-decoration: none;
+  color: black;
+}
+
+#email-link:hover {
+  text-decoration: underline;
+  color: red;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+.contact-social h3 {
+  margin-top: 0;
+}
+
+.contact-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact-social li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.contact-social li:last-child {
+  margin-right: 0;
+}
+
+.contact-social a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.contact-social a:hover {
+  text-decoration: underline;
+  color: red;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/***** END OF CONTACT STUFF *****/
+
+/***** BIO STUFF *****/
+.bios {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  /* flex-direction: column; */
+}
+.card {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+  background-color: #fff;
+  margin-right: 15px;
+  /* margin-left: 08px; */
+}
+
+.contact-social img {
+  margin-right: 5px;
+}
+
+/***** END OF BIO STUFF *****/
+
+/***** MY PROFILE STUFF *****/
+
+#update-profile {
+  float: right;
+}
+
+/***** END OF PROFILE STUFF *****/
+
+#select-icon-btn {
+  margin: 10px;
+}
+
+#submit-update-btn {
+  margin: 10px;
+}
+
+/***** AGENTS PAGE *****/
+.agent-wrapper {
+  overflow: auto;
+  max-height: calc(100vh - 140px);
+}
+
+.agent-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  grid-gap: 1em;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.agent-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.agent-card:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.agent-card:hover::before {
+  left: 0;
+}
+
+.agent-card-header,
+.agent-card-image,
+.agent-abilities-list {
+  position: relative;
+  z-index: 2;
+}
+
+.agent-card-header {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.agent-card-image {
+  max-width: 100%;
+  margin-bottom: 0.5em;
+  border: 1px solid #ddd;
+}
+
+.agent-card-body {
+  margin-top: 0.5em;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.agent-abilities-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.agent-ability-item {
+  margin-bottom: 0.25em;
+  font-size: 0.9em;
+}
+
+.agent-pagination {
+  margin-top: 1em;
+  text-align: center;
+  margin-bottom: 10em;
+}
+
+.agent-pagination a {
+  background-color: #f5f5f5;
+  color: #337ab7;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+}
+
+.agent-pagination a:hover {
+  background-color: lightgray;
+}
+
+.agent-card-header {
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  position: relative;
+  z-index: 1;
+  color: black;
+}
+
+.agent-card-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.agent-card:hover .agent-card-header::after {
+  opacity: 1;
+}
+
+.agent-card:hover .agent-card-header {
+  color: white;
+}
+
+/***** END OF AGENTS PAGE *****/
+
+/********* WEAPONS PAGE *********/
+
+.weapon-wrapper {
+  margin-bottom: 10rem;
+}
+
+.weapon-div {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+.weapon-card-header {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.weapon-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weapon-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.weapon-item {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  min-width: 200px;
+  margin-right: 2px;
+  transition: all 0.2s ease-in-out;
+}
+
+.weapon-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.weapon-card-image-container {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.weapon-card-image {
+  height: auto;
+  width: 200px;
+  object-fit: cover;
+  border: solid 1px #ddd;
+}
+
+.weapon-card-details-container {
+  margin-top: 0.5rem;
+}
+
+.weapon-card-details-header {
+  font-size: 1.25rem;
+  margin: 0.25rem 0;
+  color: #333;
+}
+
+.weapon-card-details {
+  margin: 0;
+  color: #666;
+}
+
+/********* END OF WEAPONS PAGE *********/
+
+/********* MAPS PAGE *********/
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.map-card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #ececec;
+}
+
+.map-card-header h3 {
+  margin: 0;
+}
+
+.map-slideshow-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.map-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.map-slide-image {
+  max-height: 60vh;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.map-slide-info {
+  margin-top: 1rem;
+}
+
+.map-slide-icon {
+  display: none;
+}
+
+.view-map-layout-btn {
+  margin-top: 1rem;
+}
+
+/********* END OF MAPS PAGE *********/
+
+/***** SCROLL BAR STUFF *****/
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2em;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/***** END OF SCROLL BAR STUFF *****/
+/***** MODAL STUFF *****/
+.col {
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+.modal-dialog {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+}
+
+.modal-content {
+  background-color: #fff;
+  position: relative;
+  border-radius: 0.3rem;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  overflow: auto;
+  max-height: calc(100vh - 100px);
+}
+
+.modal-header {
+  padding: 1rem;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 700;
+}
+
+.modal-body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  padding: 20px;
+}
+
+.modal-footer {
+  padding: 1rem;
+  border-top: none;
+}
+
+.btn-close {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  line-height: 1;
+  opacity: 1;
+}
+
+.agent-selection-card {
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.agent-selection-card:hover {
+  border-color: #007bff;
+}
+
+.agent-selection-card img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px 5px 0 0;
+}
+
+.agent-selection-card.selected {
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+  border: 2px solid #007bff;
+}
+/********* END OF MODAL *********/
